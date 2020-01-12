@@ -1,0 +1,87 @@
+input,
+select,
+textarea,
+.agreement-message {
+  padding: 10px 7px !important;
+  border: none !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+  box-shadow: 0px 0px 5px inset #333 !important;
+  font-size: 13px !important;
+  background: #ffffff !important;
+  outline: 0px !important;
+  margin-bottom: 3% !important;
+}
+
+p,
+label,
+fieldset,
+ul li {
+  color: white;
+}
+
+.agreement-message,
+.agreement-message ol li,
+.agreement-message p {
+  color: black;
+}
+
+.one-fourth-smaller select {
+  height: 100%;
+}
+
+select {
+  max-height: 38px;
+  padding: 15px;
+}
+
+.button {
+  border: none;
+  background: #bf2e1a;
+  padding: 15px 52px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  display: block;
+  border-radius: 6px;
+  margin: auto;
+  font-family: "Raleway", Helvetica, Arial, Lucida, sans-serif;
+  margin-bottom: 15px;
+}
+
+fieldset {
+  border: 2px solid white;
+}
+
+#infoClaim {
+  margin-bottom: 20px;
+}
+
+.error-border {
+  border: 1px solid red !important;
+}
+
+.red {
+  color: red !important;
+}
+
+#errors {
+  margin-bottom: 15px;
+}
+
+#errors ul li {
+  color: red !important;
+}
+
+#idQuestion {
+  margin-bottom: 0 !important;
+}
+
+.thankYouHeader {
+  color: white;
+  font-size: 3rem;
+}
+
+.thankYouMessage {
+  font-size: 1.2rem;
+}
