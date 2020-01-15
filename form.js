@@ -193,7 +193,7 @@ submitButton.addEventListener("click", function(e) {
 
   // check if radio is checked
   if (radios.value === "" || radios.value == null) {
-    messages.push("please agree to the service agreement");
+    messages.push("Please agree to the service agreement");
     agreeDiv.classList.add("error-border");
   } else {
     agreeDiv.classList.remove("error-border");
