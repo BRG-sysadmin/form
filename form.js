@@ -37,6 +37,7 @@ var refCode = document.getElementById("refCode");
 var refMsg = document.getElementById("refMsg");
 var ref1 = document.getElementById("30-1");
 var ref2 = document.getElementById("30-2");
+var submitButton = document.getElementById("submitButton");
 
 // function to verify there is a value for input fields
 function verifyValue(element) {
@@ -110,7 +111,7 @@ refCode.addEventListener("blur", event => {
 });
 
 // handle form submission
-form.addEventListener("submit", function(e) {
+submitButton.addEventListener("click", function(e) {
   e.preventDefault();
   var fetchValue;
 
