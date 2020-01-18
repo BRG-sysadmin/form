@@ -113,15 +113,6 @@ refCode.addEventListener("blur", event => {
 // handle form submission
 submitButton.addEventListener("click", function(e) {
   e.preventDefault();
-  var fetchValue;
-
-  if (refCode.value == null || refCode.value == "") {
-    fetchValue = "null";
-  } else {
-    fetchValue = refCode.value;
-  }
-
-  console.log(fetchValue);
 
   // ensure the messages is cleared on each submit and remove error borders
   messages = [];
@@ -240,15 +231,6 @@ submitButton.addEventListener("click", function(e) {
 
 var placeSearch, autocomplete;
 
-var componentForm = {
-  // street_number: "short_name",
-  // route: "long_name"
-  // locality: "long_name",
-  // administrative_area_level_1: "short_name",
-  // country: "long_name",
-  // postal_code: "short_name"
-};
-
 function initAutocomplete() {
   // Create the autocomplete object, restricting the search predictions to
   // geographical location types.
@@ -331,5 +313,3 @@ function geolocate() {
 }
 
 google.maps.event.addDomListener(window, "load", initAutocomplete);
-
-console.log("loaded");
