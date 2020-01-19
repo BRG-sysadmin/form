@@ -80,22 +80,29 @@ if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
 
     console.log("defined verify options");
 
+    function radioInput() {
+      // prev ? console.log(prev.value) : null;
+      // if (this !== prev) {
+      //   prev = this;
+      // }
+      // console.log(this.value);
+      if (this.value === "ReadAndAgree") {
+        signatureField.type = "text";
+      } else {
+        signatureField.value = "";
+        signatureField.type = "hidden";
+      }
+    }
+
     // loop through radios and show signature field if checked
     // var prev = null;
     for (var i = 0; i < radios.length; i++) {
-      radios[i].addEventListener("change", function() {
-        // prev ? console.log(prev.value) : null;
-        // if (this !== prev) {
-        //   prev = this;
-        // }
-        // console.log(this.value);
-        if (this.value === "ReadAndAgree") {
-          signatureField.type = "text";
-        } else {
-          signatureField.value = "";
-          signatureField.type = "hidden";
-        }
-      });
+      // radios[i].addEventListener("change", );
+      if (radios[i].addEventListener) {
+        radios[i].addEventListener("click", radioInput);
+      } else if (radios[i].attachEvent) {
+        radios[i].attachEvent("onclick", radioInput);
+      }
     }
 
     console.log("radio check finished");
