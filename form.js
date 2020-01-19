@@ -19,9 +19,6 @@ var secondaryEmailField = document.querySelector(
 var verifySecondaryEmailField = document.querySelector(
   'input[name="SecondaryEmail2"]'
 );
-var serviceAgreementField = document.querySelector(
-  'input[name="ServiceAgreement"]'
-);
 var merchantIdField = document.querySelector('input[name="MerchantID"]');
 var merchantIDIssuerField = document.querySelector(
   'input[name="MerchantIDIssuer"]'
