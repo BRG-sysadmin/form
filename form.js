@@ -364,8 +364,9 @@ if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
     window.addEventListener("load", () => {
       main();
     });
+  } else {
+    main();
   }
-  main();
 
   console.log("end");
 }
