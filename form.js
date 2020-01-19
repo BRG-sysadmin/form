@@ -1,5 +1,11 @@
-if (navigator.appVersion.indexOf("MSIE") != -1) {
-  alert("You use IE. ");
+if (
+  navigator.appName == "Microsoft Internet Explorer" ||
+  !!(
+    navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)
+  ) ||
+  (typeof $.browser !== "undefined" && $.browser.msie == 1)
+) {
+  alert("Please dont use IE.");
 } else {
   function main() {
     console.log("start");
