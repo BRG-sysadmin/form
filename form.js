@@ -1,8 +1,3 @@
-console.log("beggining");
-
-var ua = window.navigator.userAgent;
-var msie = ua.indexOf("MSIE ");
-
 if (navigator.appVersion.indexOf("MSIE") != -1) {
   alert("You use IE. ");
 } else {
