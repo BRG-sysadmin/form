@@ -350,14 +350,10 @@ if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
         });
       }
     }
-
-    console.log("goe finished");
-
-    initAutocomplete();
-    console.log("init complete");
   }
 
   main();
+  initAutocomplete();
 
   console.log("end");
 }
