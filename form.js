@@ -48,6 +48,10 @@ if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
     var ref1 = document.getElementById("30-1");
     var ref2 = document.getElementById("30-2");
     var submitButton = document.getElementById("submitButton");
+    var listenType =
+      navigator.userAgent.toLowerCase().indexOf("edge") != -1
+        ? "mouseup"
+        : "click";
 
     console.log("init finished");
 
@@ -131,7 +135,7 @@ if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
     console.log("ref code fetch finished");
 
     // handle form submission
-    submitButton.addEventListener("click", function(e) {
+    submitButton.addEventListener(listenType, function(e) {
       e.preventDefault();
 
       // ensure the messages is cleared on each submit and remove error borders
