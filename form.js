@@ -43,7 +43,7 @@ var submitButton = document.getElementById("submitButton");
 function verifyValue(element) {
   if (element.value === "" || element.value == null) {
     element.classList.add("error-border");
-    messages.push(`please enter ${element.placeholder}`);
+    messages.push(`Please enter ${element.placeholder}`);
   } else {
     element.classList.remove("error-border");
   }
@@ -308,6 +308,7 @@ function fillInAddress() {
 function geolocate() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
+      2;
       var geolocation = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
