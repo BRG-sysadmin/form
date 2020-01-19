@@ -5,7 +5,36 @@ if (
   ) ||
   (typeof $.browser !== "undefined" && $.browser.msie == 1)
 ) {
-  alert("Please dont use IE.");
+  if ($.browser.msie && window.XDomainRequest) {
+    function processData(data) {
+      console.log(data);
+    }
+    // Use Microsoft XDR
+    var xdr = new XDomainRequest();
+    xdr.open(
+      "get",
+      "https://43k8h1qbx6.execute-api.us-west-1.amazonaws.com/default/BRG-referral-code-check?refcode=lewis22"
+    );
+    xdr.onload = function() {
+      var JSON = $.parseJSON(xdr.responseText);
+      if (JSON == null || typeof JSON == "undefined") {
+        JSON = $.parseJSON(data.firstChild.textContent);
+      }
+      processData(JSON);
+    };
+    xdr.send();
+  } else {
+    $.ajax({
+      type: "GET",
+      url: "someurl",
+      processData: true,
+      data: {},
+      dataType: "json",
+      success: function(data) {
+        processData(data);
+      }
+    });
+  }
 } else {
   function main() {
     console.log("start");
