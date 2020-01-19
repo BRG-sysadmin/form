@@ -350,4 +350,13 @@ if (document.documentMode || /Edge/.test(navigator.userAgent)) {
   });
 }
 
+var ua = window.navigator.userAgent;
+var msie = ua.indexOf("MSIE ");
+
+if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+  // If Internet Explorer, return version number
+  rootDiv.innerHTML =
+    "<p>Please reload this page using Microsoft Edge, Google Chrome, or Mozilla FireFox.</p>";
+}
+
 console.log("end");
