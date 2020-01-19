@@ -1,6 +1,6 @@
 console.log("beggining");
 
-document.addEventListener("DOMContentLoaded", function() {
+function main() {
   console.log("start");
 
   // initialize form element variables
@@ -339,6 +339,15 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log("goe finished");
 
   initAutocomplete();
+  console.log("init complete");
+}
 
-  console.log("end");
-});
+main();
+
+if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+  document.addEventListener("DOMContentLoaded", function() {
+    main();
+  });
+}
+
+console.log("end");
