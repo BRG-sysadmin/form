@@ -100,10 +100,10 @@ refCode.addEventListener("blur", function(event) {
       "x-api-key": "gFZ52tAaHi9nr2diLWCwYi3qctC0x309lOdd7IY4"
     }
   })
-    .then(function(response) {
-      return response.json();
+    .then(response => {
+      response.json();
     })
-    .then(function(data) {
+    .then(data => {
       console.log(data);
 
       if (data.refcode === "" || data.refcode == null) {
