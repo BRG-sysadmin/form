@@ -359,11 +359,5 @@ if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
 
   main();
 
-  if (document.documentMode || /Edge/.test(navigator.userAgent)) {
-    document.addEventListener("DOMContentLoaded", function() {
-      main();
-    });
-  }
-
   console.log("end");
 }
