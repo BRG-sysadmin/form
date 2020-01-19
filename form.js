@@ -321,7 +321,7 @@ function geolocate() {
   }
 }
 
-$("#autocomplete").focus(function() {
+document.getElementById("autocomplete").addEventListener("focus", function() {
   geolocate();
 });
 
