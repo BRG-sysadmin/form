@@ -335,6 +335,5 @@ function geolocate() {
 document.getElementById("autocomplete").addEventListener("focus", function() {
   geolocate();
 });
-window.addEventListener("load", function() {
-  initAutocomplete();
-});
+
+initAutocomplete();
