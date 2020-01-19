@@ -1,6 +1,8 @@
 "use strict";
 
 window.addEventListener("load", function() {
+  console.log("start");
+
   // initialize form element variables
   var orgNameField = document.querySelector('input[name="Company"]');
   var addressField = document.querySelector('input[name="AddressLine1"]');
@@ -40,6 +42,8 @@ window.addEventListener("load", function() {
   var ref2 = document.getElementById("30-2");
   var submitButton = document.getElementById("submitButton");
 
+  console.log("init finished");
+
   // function to verify there is a value for input fields
   function verifyValue(element) {
     if (element.value === "" || element.value == null) {
@@ -63,6 +67,8 @@ window.addEventListener("load", function() {
     }
   }
 
+  console.log("defined verify options");
+
   // loop through radios and show signature field if checked
   // var prev = null;
   for (var i = 0; i < radios.length; i++) {
@@ -80,6 +86,8 @@ window.addEventListener("load", function() {
       }
     });
   }
+
+  console.log("radio check finished");
 
   refCode.addEventListener("blur", event => {
     fetch(
@@ -110,6 +118,8 @@ window.addEventListener("load", function() {
         console.log(err);
       });
   });
+
+  console.log("ref code fetch finished");
 
   // handle form submission
   submitButton.addEventListener("click", function(e) {
