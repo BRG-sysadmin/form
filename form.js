@@ -3,10 +3,8 @@ console.log("beggining");
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 
-if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
-  // If Internet Explorer, return version number
-  document.getElementById("rootForm").innerHTML =
-    "<p>Please reload this page using Microsoft Edge, Google Chrome, or Mozilla FireFox.</p>";
+if (navigator.appVersion.indexOf("MSIE") != -1) {
+  alert("You use IE. ");
 } else {
   function main() {
     console.log("start");
