@@ -112,8 +112,10 @@ if (navigator.appVersion.indexOf("MSIE") != -1) {
           "x-api-key": "gFZ52tAaHi9nr2diLWCwYi3qctC0x309lOdd7IY4"
         }
       })
-        .then(response => response.json())
-        .then(data => {
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
           console.log(data);
 
           if (data.refcode === "" || data.refcode == null) {
