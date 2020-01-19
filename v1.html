@@ -24,3 +24,5 @@
 ></script>
 
 google.maps.event.addDomListener(window, "load", initAutocomplete);
+document.getElementById("autocomplete").addEventListener("focus", function() {
+geolocate(); });

@@ -240,6 +240,8 @@ submitButton.addEventListener("click", function(e) {
   }
 });
 
+console.log("starting google");
+
 var placeSearch, autocomplete;
 
 // var componentForm = {
@@ -267,6 +269,8 @@ function initAutocomplete() {
   // address fields in the form.
   autocomplete.addListener("place_changed", fillInAddress);
 }
+
+console.log("defined init");
 
 function fillInAddress() {
   // Get the place details from the autocomplete object.
@@ -314,6 +318,8 @@ function fillInAddress() {
   }
 }
 
+console.log("complete function fill");
+
 // Bias the autocomplete object to the user's geographical location,
 // as supplied by the browser's 'navigator.geolocation' object.
 function geolocate() {
@@ -332,8 +338,8 @@ function geolocate() {
   }
 }
 
-document.getElementById("autocomplete").addEventListener("focus", function() {
-  geolocate();
-});
+console.log("goe finished");
 
 initAutocomplete();
+
+console.log("end");
