@@ -48,7 +48,7 @@ window.addEventListener("load", function() {
   function verifyValue(element) {
     if (element.value === "" || element.value == null) {
       element.classList.add("error-border");
-      messages.push(`Please enter ${element.placeholder}`);
+      messages.push("Please enter " + element.placeholder);
     } else {
       element.classList.remove("error-border");
     }
@@ -89,17 +89,22 @@ window.addEventListener("load", function() {
 
   console.log("radio check finished");
 
-  refCode.addEventListener("blur", event => {
-    fetch(
-      `https://43k8h1qbx6.execute-api.us-west-1.amazonaws.com/default/BRG-referral-code-check?refcode=${refCode.value}`,
-      {
-        headers: {
-          "x-api-key": "gFZ52tAaHi9nr2diLWCwYi3qctC0x309lOdd7IY4"
-        }
+  refCode.addEventListener("blur", function(event) {
+    var url =
+      "https://43k8h1qbx6.execute-api.us-west-1.amazonaws.com/default/BRG-referral-code-check?refcode=" +
+      refCode.value;
+
+    console.log(url);
+
+    fetch(url, {
+      headers: {
+        "x-api-key": "gFZ52tAaHi9nr2diLWCwYi3qctC0x309lOdd7IY4"
       }
-    )
-      .then(response => response.json())
-      .then(data => {
+    })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
         console.log(data);
 
         if (data.refcode === "" || data.refcode == null) {
@@ -112,10 +117,6 @@ window.addEventListener("load", function() {
             ref2.innerHTML = data.percent;
           }
         }
-      })
-      .catch(err => {
-        console.log("there was an error");
-        console.log(err);
       });
   });
 
@@ -175,7 +176,7 @@ window.addEventListener("load", function() {
       emailField.classList.remove("error-border");
     }
 
-    if (!secondaryEmailField.value.length == 0) {
+    if (secondaryEmailField.value.length !== 0) {
       if (verifySecondaryEmailField.value != secondaryEmailField.value) {
         secondaryEmailField.classList.add("error-border");
         verifySecondaryEmailField.classList.add("error-border");
@@ -297,7 +298,7 @@ window.addEventListener("load", function() {
 
     var val;
 
-    place.address_components.forEach(e => {
+    place.address_components.forEach(function(e) {
       if (e.types[0] == "administrative_area_level_1") {
         val = e.long_name;
       } else if (e.types[0] == "postal_code") {
@@ -319,7 +320,6 @@ window.addEventListener("load", function() {
   function geolocate() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
-        2;
         var geolocation = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
