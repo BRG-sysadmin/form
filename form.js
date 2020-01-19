@@ -244,8 +244,7 @@ function initAutocomplete() {
   // Create the autocomplete object, restricting the search predictions to
   // geographical location types.
   autocomplete = new google.maps.places.Autocomplete(
-    document.getElementById("autocomplete"),
-    { types: ["geocode"] }
+    document.getElementById("autocomplete")
   );
 
   // Avoid paying for data that you don't need by restricting the set of
