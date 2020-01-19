@@ -103,14 +103,15 @@ if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
 
       console.log(url);
 
-      fetch(url, {
-        headers: {
-          "x-api-key": "gFZ52tAaHi9nr2diLWCwYi3qctC0x309lOdd7IY4"
+      fetch(
+        `https://43k8h1qbx6.execute-api.us-west-1.amazonaws.com/default/BRG-referral-code-check?refcode=${refCode.value}`,
+        {
+          headers: {
+            "x-api-key": "gFZ52tAaHi9nr2diLWCwYi3qctC0x309lOdd7IY4"
+          }
         }
-      })
-        .then(response => {
-          response.json();
-        })
+      )
+        .then(response => response.json())
         .then(data => {
           console.log(data);
 
