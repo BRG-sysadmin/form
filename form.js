@@ -360,6 +360,12 @@ if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
     initAutocomplete();
   }
 
+  if (/Edge/.test(navigator.userAgent)) {
+    alert("Hello Microsoft User!");
+    window.addEventListener("load", () => {
+      main();
+    });
+  }
   main();
 
   console.log("end");
