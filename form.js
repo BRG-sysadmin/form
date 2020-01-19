@@ -351,7 +351,7 @@ if (navigator.appVersion.indexOf("MSIE") != -1) {
   }
 
   if (/Edge/.test(navigator.userAgent)) {
-    window.addEventListener("load", () => {
+    window.addEventListener("load", function() {
       main();
     });
   } else {
