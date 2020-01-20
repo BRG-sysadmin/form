@@ -234,7 +234,15 @@ if (
         });
         // errorElement.innerText = messages.join(", ");
       } else {
-        form.submit();
+        // form.submit();
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/your/url/name.php");
+        xhr.onload = function(event) {
+          console.log("success"); // raw response
+        };
+        // or onerror, onabort
+        var formData = new FormData(document.getElementById("mainForm"));
+        xhr.send(formData);
         var div = document.createElement("div");
         var h2 = document.createElement("h2");
         var thankYou = document.createTextNode("Thank You");
