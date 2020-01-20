@@ -5,23 +5,8 @@ if (
   ) ||
   (typeof $.browser !== "undefined" && $.browser.msie == 1)
 ) {
-  function processData(data) {
-    console.log(data);
-  }
-  // Use Microsoft XDR
-  var xdr = new XDomainRequest();
-  xdr.open(
-    "get",
-    "https://43k8h1qbx6.execute-api.us-west-1.amazonaws.com/default/BRG-referral-code-check?refcode=lewis22"
-  );
-  xdr.onload = function() {
-    var JSON = $.parseJSON(xdr.responseText);
-    if (JSON == null || typeof JSON == "undefined") {
-      JSON = $.parseJSON(data.firstChild.textContent);
-    }
-    processData(JSON);
-  };
-  xdr.send();
+  document.getElementById("roodForm").innerHTML =
+    "<p>Please reload this page using Microsoft Edge, Google Chrome, or Mozilla Firefox.</p>";
 } else {
   function main() {
     console.log("start");
