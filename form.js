@@ -5,7 +5,7 @@ if (
   ) ||
   (typeof $.browser !== "undefined" && $.browser.msie == 1)
 ) {
-  document.getElementById("roodForm").innerHTML =
+  document.getElementById("rootForm").innerHTML =
     "<p>Please reload this page using Microsoft Edge, Google Chrome, or Mozilla Firefox.</p>";
 } else {
   function main() {
