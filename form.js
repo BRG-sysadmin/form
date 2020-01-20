@@ -1,9 +1,6 @@
 if (
   navigator.appName == "Microsoft Internet Explorer" ||
-  !!(
-    navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)
-  ) ||
-  (typeof $.browser !== "undefined" && $.browser.msie == 1)
+  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/))
 ) {
   document.getElementById("rootForm").innerHTML =
     "<p>Please reload this page using Microsoft Edge, Google Chrome, or Mozilla Firefox.</p>";
