@@ -236,8 +236,6 @@ if (
       } else {
         form.submit();
 
-        var formData = new FormData(document.getElementById("mainForm"));
-        xhr.send(formData);
         var div = document.createElement("div");
         var h2 = document.createElement("h2");
         var thankYou = document.createTextNode("Thank You");
